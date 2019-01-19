@@ -6,7 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 
 	<title>Penghitungan</title>
@@ -14,133 +15,342 @@
 <body>
 
 	<div class="grup-all-content">
-		<div class="row">
-			<div class="col-xs-12 col-sm-3">
-				<div class="card">
-					<h3>Rincian Syarat Hitung</h3>
-					<div class="card-body">
-						<form action="">
-							<div class="form-group">
-								<label for="exampleInputtext1">Kebutuhan Perbulan</label>
-								<div class="input-group mb-3">
-									<div class="input-group-prepend">
-										<span class="input-group-text" id="basic-addon1">Rp</span>
+		<div class="navigasi-all">
+			<ul class="ul nav nav-tabs">
+				<li class="active"><a data-toggle="tab" href="#tahunan-new" role="tab">Tahunan</a></li>
+				<li><a data-toggle="tab" href="#harian" role="tab">Harian</a></li>
+				<li><a data-toggle="tab" href="#tariansekali" role="tab">Nabung sekali</a></li>
+			</ul>
+		</div>
+		<div class="tab-content">
+			<div class="tab-pane fade in active" id="tahunan-new">
+				<div class="col-xs-12 col-sm-3">
+					<div class="well">
+						<h3>Rincian Syarat Hitung</h3>
+						<div class="card-body">
+							<form action="">
+								<div class="form-group">
+									<label for="exampleInputtext1">Kebutuhan Perbulan</label>
+									<div class="input-group">
+										<span class="input-group-addon">
+											<span class="input-group-text" id="basic-addon1">Rp</span>
+										</span>
+										<input type="text" class="form-control"  id="perbulan" value="10000000" aria-describedby="textHelp" placeholder="Enter text">
 									</div>
-									<input type="text" class="form-control"  id="perbulan" value="10000000" aria-describedby="textHelp" placeholder="Enter text">
+									<small id="textHelp" class="form-text text-muted">Merupakan jumlah total uang yang terpakai perbulan</small>
 								</div>
-								<small id="textHelp" class="form-text text-muted">Merupakan jumlah total uang yang terpakai perbulan</small>
-							</div>
-							<button type="button" class="btn btn-primary" id="hitung">Hitung</button>
-							<hr>
-							<div class="form-group">
-								<label for="exampleInputtext1">Intrest/ Pertahun</label>
-								<div class="input-group mb-3">
-									<input type="text" class="form-control" id="bungapertahun" aria-describedby="textHelp" placeholder="Enter text" aria-describedby="basic-addon2">
-									<div class="input-group-append">
-										<span class="input-group-text" id="basic-addon2">%</span>
+								<button type="button" class="btn btn-primary" id="hitung">Hitung</button>
+								<hr>
+								<div class="form-group">
+									<label for="exampleInputtext1">Intrest/ Pertahun</label>
+									<div class="input-group">
+										<input type="text" class="form-control" id="bungapertahun" aria-describedby="textHelp" placeholder="Enter text" aria-describedby="basic-addon2">
+										<span class="input-group-addon">
+											<span class="input-group-text" id="basic-addon2">%</span>
+										</span>
 									</div>
+									<small id="textHelp" class="form-text text-muted">Bunga yang kamu dapat pertahun.</small>
 								</div>
-								<small id="textHelp" class="form-text text-muted">Bunga yang kamu dapat pertahun.</small>
-							</div>
-							<div class="form-group">
-								<label for="exampleInputtext1">Jangka Waktu</label>
-								<div class="input-group mb-3">
-									<input type="text" class="form-control" id="jangkawaktu" aria-describedby="textHelp" placeholder="Enter text" aria-describedby="basic-addon2">
-									<div class="input-group-append">
-										<span class="input-group-text" id="basic-addon2">Tahun</span>
+								<div class="form-group">
+									<label for="exampleInputtext1">Jangka Waktu</label>
+									<div class="input-group">
+										<input type="text" class="form-control" id="jangkawaktu" aria-describedby="textHelp" placeholder="Enter text" aria-describedby="basic-addon2">
+										<span class="input-group-addon">
+											<span class="input-group-text" id="basic-addon2">Tahun</span>
+										</span>
 									</div>
+									<small id="textHelp" class="form-text text-muted">Merupakan lama menabung anda.</small>
 								</div>
-								<small id="textHelp" class="form-text text-muted">Merupakan lama menabung anda.</small>
-							</div>
-							<div class="form-group">
-								<label for="exampleInputtext1">Perkiraan Menabung/Bulan</label>
-								<div class="input-group mb-3">
-									<div class="input-group-prepend">
-										<span class="input-group-text" id="basic-addon1">Rp</span>
+								<div class="form-group">
+									<label for="exampleInputtext1">Perkiraan Menabung/Bulan</label>
+									<div class="input-group">
+										<span class="input-group-addon">
+											<span class="input-group-text" id="basic-addon1">Rp</span>
+										</span>
+										<input type="text" class="form-control"  id="disisihkan" aria-describedby="textHelp" placeholder="Enter text">
 									</div>
-									<input type="text" class="form-control"  id="disisihkan" aria-describedby="textHelp" placeholder="Enter text">
+									<small id="textHelp" class="form-text text-muted">Merupakan jumlah uang yang disisihkan perbulan untuk investasi</small>
 								</div>
-								<small id="textHelp" class="form-text text-muted">Merupakan jumlah uang yang disisihkan perbulan untuk investasi</small>
-							</div>
-							<button type="button" class="btn btn-primary" id="hitung-all">Hitung</button>
-						</form>
+								<button type="button" class="btn btn-primary" id="hitung-all">Hitung</button>
+								<button type="button" class="btn btn-danger" id="reset-all">Reset</button>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-9">
+					<div class="card modif-card">
+						<h1>Hasil Penghitungan</h1>
+						<p>Perbulan : <span id="bulanan"></span></p>
+						<p>Pertahun : <span id="tahunan"></span></p>
+						<p>Target : <span id="target"></span></p>
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">No</th>
+									<th scope="col">Pertahun</th>
+									<th scope="col">Intrest/ Tahun</th>
+									<th scope="col">Hasil Intrest</th>
+									<th scope="col">Total Pendapatan/Tahun</th>
+								</tr>
+							</thead>
+							<tbody class="isidata">
+
+							</tbody>
+						</table>
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-12 col-sm-9">
-				<div class="card modif-card">
-					<h1>Hasil Penghitungan</h1>
-					<p>Perbulan : <span id="bulanan"></span></p>
-					<p>Pertahun : <span id="tahunan"></span></p>
-					<p>Target : <span id="target"></span></p>
-					<table class="table">
-						<thead>
-							<tr>
-								<th scope="col">No</th>
-								<th scope="col">Pertahun</th>
-								<th scope="col">Intrest/ Tahun</th>
-								<th scope="col">Hasil Intrest</th>
-								<th scope="col">Total Pendapatan/Tahun</th>
-							</tr>
-						</thead>
-						<tbody class="isidata">
-							
-						</tbody>
-					</table>
+			<div class="tab-pane fade" id="harian">
+				<div class="col-xs-12 col-sm-3">
+					<div class="well">
+						<h3>Rincian Syarat Hitung</h3>
+						<div class="card-body">
+							<form action="">
+								<div class="form-group">
+									<label for="exampleInputtext1">Intrest/ Perhari</label>
+									<div class="input-group">
+										<input type="text" class="form-control" id="bungaperhari" aria-describedby="textHelp" placeholder="Enter text" aria-describedby="basic-addon2">
+										<span class="input-group-addon">
+											<span class="input-group-text" id="basic-addon2">%</span>
+										</span>
+									</div>
+									<small id="textHelp" class="form-text text-muted">Bunga yang kamu dapat perhari.</small>
+								</div>
+								<div class="form-group">
+									<label for="exampleInputtext1">Jangka Waktu</label>
+									<div class="input-group">
+										<input type="text" class="form-control" id="jangkawaktuH" aria-describedby="textHelp" placeholder="Enter text" aria-describedby="basic-addon2">
+										<span class="input-group-addon">
+											<span class="input-group-text" id="basic-addon2">Tahun</span>
+										</span>
+									</div>
+									<small id="textHelp" class="form-text text-muted">Merupakan lama menabung anda.</small>
+								</div>
+								<div class="form-group">
+									<label for="exampleInputtext1">Perkiraan Menabung/Bulan</label>
+									<div class="input-group">
+										<span class="input-group-addon">
+											<span class="input-group-text" id="basic-addon1">Rp</span>
+										</span>
+										<input type="text" class="form-control"  id="disisihkanH" aria-describedby="textHelp" placeholder="Enter text">
+									</div>
+									<small id="textHelp" class="form-text text-muted">Merupakan jumlah uang yang disisihkan perbulan untuk investasi</small>
+								</div>
+								<button type="button" class="btn btn-primary" id="hitung-all-harian">Hitung</button>
+								<button type="button" class="btn btn-danger" id="reset-all-harian">Reset</button>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-9">
+					<div class="card modif-card">
+						<h1>Hasil Penghitungan Bunga perhari</h1>
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">No</th>
+									<th scope="col">Pertahun</th>
+									<th scope="col">Intrest/ Tahun</th>
+									<th scope="col">Hasil Intrest</th>
+									<th scope="col">Total Pendapatan/Tahun</th>
+								</tr>
+							</thead>
+							<tbody class="isidataHarian">
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="tab-pane fade" id="tariansekali">
+				<div class="col-xs-12 col-sm-3">
+					<div class="well">
+						<h3>Rincian Syarat Hitung</h3>
+						<div class="card-body">
+							<form action="">
+								<div class="form-group">
+									<label for="exampleInputtext1">Intrest/ Pertahun</label>
+									<div class="input-group">
+										<input type="text" class="form-control" id="bungapertahun1" aria-describedby="textHelp" placeholder="Enter text" aria-describedby="basic-addon2">
+										<span class="input-group-addon">
+											<span class="input-group-text" id="basic-addon2">%</span>
+										</span>
+									</div>
+									<small id="textHelp" class="form-text text-muted">Bunga yang kamu dapat pertahun.</small>
+								</div>
+								<div class="form-group">
+									<label for="exampleInputtext1">Jangka Waktu</label>
+									<div class="input-group">
+										<input type="text" class="form-control" id="jangkawaktu1" aria-describedby="textHelp" placeholder="Enter text" aria-describedby="basic-addon2">
+										<span class="input-group-addon">
+											<span class="input-group-text" id="basic-addon2">Tahun</span>
+										</span>
+									</div>
+									<small id="textHelp" class="form-text text-muted">Merupakan lama menabung anda.</small>
+								</div>
+								<div class="form-group">
+									<label for="exampleInputtext1">Perkiraan Menabung/Bulan</label>
+									<div class="input-group">
+										<span class="input-group-addon">
+											<span class="input-group-text" id="basic-addon1">Rp</span>
+										</span>
+										<input type="text" class="form-control"  id="disisihkan1" aria-describedby="textHelp" placeholder="Enter text">
+									</div>
+									<small id="textHelp" class="form-text text-muted">Merupakan jumlah uang yang disisihkan perbulan untuk investasi</small>
+								</div>
+								<button type="button" class="btn btn-primary" id="hitung-all-sekali">Hitung</button>
+								<button type="button" class="btn btn-danger" id="reset-all-sekali">Reset</button>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-9">
+					<div class="card modif-card">
+						<h1>Hasil Penghitungan Bunga Taunan Sekal tabung</h1>
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">No</th>
+									<th scope="col">Pertahun</th>
+									<th scope="col">Intrest/ Tahun</th>
+									<th scope="col">Hasil Intrest</th>
+									<th scope="col">Total Pendapatan/Tahun</th>
+								</tr>
+							</thead>
+							<tbody class="isidata-sekali">
+
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<!-- 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script> -->
 
-<script type="text/javascript">
+	<script type="text/javascript">
 
-	var bulanan, tahunan, target, bunga, jangka, disisihkan, pengalihan, total,code,sisihtahun, simsis;
+		var bulanan, tahunan, target, bunga, bungapertahun, bungapertahun2, jangka, disisihkan, pengalihan, total,code,sisihtahun, simsis;
 
-	$('#hitung').click(function () {
+		$('#hitung').click(function () {
 
-		bulanan = $('#perbulan').val();
-		tahunan = bulanan*12;
-		target = tahunan / 0.04;
+			bulanan = $('#perbulan').val();
+			tahunan = bulanan*12;
+			target = tahunan / 0.04;
 
-		$('#bulanan').text(bulanan.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1."));
-		$('#tahunan').text(tahunan.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1."));
-		$('#target').text(target.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1."));
-		
-	});
+			$('#bulanan').text(bulanan.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1."));
+			$('#tahunan').text(tahunan.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1."));
+			$('#target').text(target.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1."));
 
-	$('#hitung-all').click(function () {
-		
-		bunga = $('#bungapertahun').val();
-		jangka = $('#jangkawaktu').val();
-		disisihkan = $('#disisihkan').val();
-		sisihtahun = disisihkan * 12;
-		simsis = disisihkan *12;
+		});
 
-		console.log(simsis);
+		$('#reset-all').click(function () {
+			$('.isidata').html("");
+			code = "";
+			console.log('masuk sini');
+		});
 
-		for (var i = 0; i < jangka; i++) {
-			pengalihan = sisihtahun * (bunga/100);
-			total = pengalihan + sisihtahun;
-			console.log(total);
-			
-			code += "<tr> <td>"+ (i+1) +"</td> <td>"+ sisihtahun.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") +"</td> <td>"+ bunga +"% </td> <td>"+ pengalihan.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") +"</td> <td>"+ total.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") +"</td> </tr>";
+		$('#reset-all-harian').click(function () {
+			$('.isidataHarian').html("");
+			code = "";
+			console.log('masuk sini');
+		});
 
-			sisihtahun += simsis + pengalihan;
-		}
+		$('#reset-all-sekali').click(function () {
+			$('.isidata-sekali').html("");
+			code = "";
+			console.log('masuk sini');
+		});
 
-		console.log('trakhir '+simsis);
+		$('#hitung-all').click(function () {
 
-		$('.isidata').html(code);
 
-	});
-</script>
+			bunga = $('#bungapertahun').val();
+			jangka = $('#jangkawaktu').val();
+			disisihkan = $('#disisihkan').val();
+			sisihtahun = disisihkan * 12;
+			simsis = disisihkan *12;
+
+			console.log(simsis);
+
+			for (var i = 0; i < jangka; i++) {
+				pengalihan = sisihtahun * (bunga/100);
+				total = pengalihan + sisihtahun;
+				console.log(total);
+
+				code += "<tr> <td>"+ (i+1) +"</td> <td>"+ Math.ceil(sisihtahun).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") +"</td> <td>"+ bunga +"% </td> <td>"+ Math.ceil(pengalihan).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") +"</td> <td>"+ Math.ceil(total).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") +"</td> </tr>";
+
+				sisihtahun += simsis + pengalihan;
+			}
+
+			console.log('trakhir '+simsis);
+
+			$('.isidata').html(code);
+
+		});
+
+		$('#hitung-all-harian').click(function () {
+
+
+			bunga = $('#bungaperhari').val();
+			bungapertahun = ((bunga/100) * 30 )*12;
+			bungapertahun2 = ((bunga) * 30 )*12;
+			jangka = $('#jangkawaktuH').val();
+			disisihkan = $('#disisihkanH').val();
+			sisihtahun = disisihkan * 12;
+			simsis = disisihkan *12;
+
+			console.log(simsis);
+
+			for (var i = 0; i < jangka; i++) {
+				pengalihan = sisihtahun * bungapertahun;
+				total = pengalihan + sisihtahun;
+				console.log(total);
+
+				code += "<tr> <td>"+ (i+1) +"</td> <td>"+ Math.ceil(sisihtahun).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") +"</td> <td>"+ bungapertahun2 +"% </td> <td>"+ Math.ceil(pengalihan).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") +"</td> <td>"+ Math.ceil(total).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") +"</td> </tr>";
+
+				sisihtahun += simsis + pengalihan;
+			}
+
+			console.log('trakhir '+simsis);
+
+			$('.isidataHarian').html(code);
+
+		});
+
+		$('#hitung-all-sekali').click(function () {
+
+
+			bunga = $('#bungapertahun1').val();
+			jangka = $('#jangkawaktu1').val();
+			disisihkan = $('#disisihkan1').val();
+			sisihtahun = disisihkan * 12;
+			simsis = disisihkan *12;
+
+			console.log(simsis);
+
+			for (var i = 0; i < jangka; i++) {
+				pengalihan = sisihtahun * (bunga/100);
+				total = pengalihan + sisihtahun;
+				console.log(total);
+
+				code += "<tr> <td>"+ (i+1) +"</td> <td>"+ Math.ceil(sisihtahun).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") +"</td> <td>"+ bunga +"% </td> <td>"+ Math.ceil(pengalihan).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") +"</td> <td>"+ Math.ceil(total).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") +"</td> </tr>";
+
+				sisihtahun += pengalihan;
+			}
+
+			console.log('trakhir '+simsis);
+
+			$('.isidata-sekali').html(code);
+
+		});
+	</script>
 
 </body>
 </html>
